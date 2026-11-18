@@ -1,5 +1,5 @@
 // connections
-Impulse i => ResonZ bassFilter => JCRev reverb => Echo delay => dac;
+SinOsc s => Impulse i => ResonZ bassFilter => JCRev reverb => Echo delay => dac;
 SndBuf kick => ResonZ bassFilterK => JCRev reverbK  => Echo delayK => dac;
 
 // Filepath
@@ -7,6 +7,9 @@ me.dir() + "../../Misc/audio" => string path;
 
 // Array for kicks
 string kickSamples[3];
+
+// Sin wave freq
+770 => s.freq;
 
 // Open Files into the different arrays
 path + "/kick_01.wav" => kickSamples[0];
